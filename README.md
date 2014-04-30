@@ -46,12 +46,18 @@ The `FunctionRegistry` class alows you to _mock_ an internal PHP function
 
 ```php
 class MyClassTest extends \PHPUnit_Framework_TestCase
+{
+    protected function setUp()
+    {
+        // prepare the curl functions for mocking
+        \Chadicus\FunctionRegistry::reset(__NAMESPACE__, array('curl'));
+    }
+
     /**
      * @expectedExceptionMessage curl_init() failed
      */
     public function testCurlInitFails()
     {
-        \Chadicus\FunctionRegistry::reset(__NAMESPACE__, array('curl'));
         \Chadicus\FunctionRegistry::set(
             'curl_init', 
             function () {
@@ -64,6 +70,7 @@ class MyClassTest extends \PHPUnit_Framework_TestCase
         // this will call our custom curl_init function
         $myClass->doSomething();
     }
+}
 ```
 
 For functions and constants, PHP will fall back to global functions or constants if a namespaced function or constant does not exist. It is because of this behavior that we can _mock_ internal functions.
