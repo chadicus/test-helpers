@@ -19,6 +19,6 @@
         "chadicus/coding-standard": "dev-master"
     },
     "autoload": {
-        "psr-0": { "Chadicus": ["src", "tests"] }
+        "psr-4": { "Chadicus\\": "src" }
     }
 }
