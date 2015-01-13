@@ -56,18 +56,31 @@ final class FunctionRegistry
         self::$functions = array();
         foreach ($extensions as $extension) {
             foreach (\get_extension_funcs($extension) as $name) {
-                //If it's already defined skip it.
-                if (\function_exists("{$namespace}\\{$name}")) {
-                    continue;
-                }
-
-                eval("
-                    namespace {$namespace};
-                    function {$name}() {
-                        return \call_user_func_array(\Chadicus\FunctionRegistry::get('{$name}'), \\func_get_args());
-                    }
-                ");
+                self::evaluate($namespace, $name);
             }
         }
+    }
+
+    /**
+     * Helper function to eval a new function call.
+     *
+     * @param string $namespace The namespace from which the global function will be called.
+     * @param string $name      The function name.
+     *
+     * @return void
+     */
+    private static function evaluate($namespace, $name)
+    {
+        //If it's already defined skip it.
+        if (\function_exists("{$namespace}\\{$name}")) {
+            return;
+        }
+
+        eval("
+            namespace {$namespace};
+            function {$name}() {
+                return \call_user_func_array(\Chadicus\FunctionRegistry::get('{$name}'), \\func_get_args());
+            }
+        ");
     }
 }

@@ -7,6 +7,7 @@ use \Chadicus\FunctionRegistry;
  * Unit tests for the \Chadicus\FunctionRegistry class.
  *
  * @coversDefaultClass \Chadicus\FunctionRegistry
+ * @covers ::<private>
  */
 final class FunctionRegistryTest extends \PHPUnit_Framework_TestCase
 {
