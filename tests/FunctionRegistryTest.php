@@ -27,6 +27,7 @@ final class FunctionRegistryTest extends \PHPUnit_Framework_TestCase
         FunctionRegistry::reset(__NAMESPACE__, ['core']);
 
         FunctionRegistry::set(
+            __NAMESPACE__,
             'extension_loaded',
             function ($name) {
                 return true;
@@ -47,7 +48,7 @@ final class FunctionRegistryTest extends \PHPUnit_Framework_TestCase
      */
     public function setAndGet()
     {
-        FunctionRegistry::set('strtolower', '\Chadicus\Tests\FunctionRegistryTest::staticCallable');
+        FunctionRegistry::set(__NAMESPACE__, 'strtolower', '\Chadicus\Tests\FunctionRegistryTest::staticCallable');
         $this->assertSame('\Chadicus\Tests\FunctionRegistryTest::staticCallable', FunctionRegistry::get('strtolower'));
 
     }

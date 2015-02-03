@@ -16,13 +16,15 @@ final class FunctionRegistry
     /**
      * Register a new function for testing.
      *
-     * @param string   $name     The function name.
-     * @param callable $function The callable to execute.
+     * @param string   $namespace The namespace from which the global function will be called.
+     * @param string   $name      The function name.
+     * @param callable $function  The callable to execute.
      *
      * @return void
      */
-    public static function set($name, callable $function)
+    public static function set($namespace, $name, callable $function)
     {
+        self::evaluate($namespace, $name);
         self::$functions[$name] = $function;
     }
 
@@ -51,7 +53,7 @@ final class FunctionRegistry
      *
      * @return void
      */
-    public static function reset($namespace, array $extensions = array())
+    public static function reset($namespace = null, array $extensions = array())
     {
         self::$functions = array();
         foreach ($extensions as $extension) {
