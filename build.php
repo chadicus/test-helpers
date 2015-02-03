@@ -29,6 +29,4 @@ foreach ($xml->xpath('//file/metrics') as $metric) {
     }
 }
 
-unlink('clover.xml');
-
 echo "Code coverage was 100%\n";
