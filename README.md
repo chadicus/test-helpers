@@ -64,6 +64,7 @@ class MyClassTest extends \PHPUnit_Framework_TestCase
     public function testCurlInitFails()
     {
         \Chadicus\FunctionRegistry::set(
+            __NAMESPACE__,
             'curl_init',
             function () {
                 return false;
@@ -91,7 +92,7 @@ To add the library as a local, per-project dependency use [Composer](http://getc
 ```json
 {
     "require-dev": {
-        "chadicus/test-helpers": "dev-master"
+        "chadicus/test-helpers": "~1.0"
     }
 }
 ```
