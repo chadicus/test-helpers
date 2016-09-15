@@ -1,10 +1,11 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "3e476543a14773de1eaaf5bb688ed099",
+    "hash": "1fd5ec669a74c4914ef7637b83d5c031",
+    "content-hash": "4546e98e57da412a13203515b2f90c97",
     "packages": [],
     "packages-dev": [
         {
@@ -151,6 +152,7 @@
                 "rest",
                 "web service"
             ],
+            "abandoned": "guzzlehttp/guzzle",
             "time": "2014-08-11 04:32:36"
         },
         {
@@ -1075,13 +1077,13 @@
             "target-dir": "Symfony/Component/Config",
             "source": {
                 "type": "git",
-                "url": "https://github.com/symfony/Config.git",
-                "reference": "a9f781ba1221067d1f07c8cec0bc50f81b8d7408"
+                "url": "https://github.com/symfony/config.git",
+                "reference": "17330c1d667edbbcca10616df82e8ade03bc1b33"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Config/zipball/a9f781ba1221067d1f07c8cec0bc50f81b8d7408",
-                "reference": "a9f781ba1221067d1f07c8cec0bc50f81b8d7408",
+                "url": "https://api.github.com/repos/symfony/config/zipball/17330c1d667edbbcca10616df82e8ade03bc1b33",
+                "reference": "17330c1d667edbbcca10616df82e8ade03bc1b33",
                 "shasum": ""
             },
             "require": {
@@ -1123,12 +1125,12 @@
             "target-dir": "Symfony/Component/Console",
             "source": {
                 "type": "git",
-                "url": "https://github.com/symfony/Console.git",
+                "url": "https://github.com/symfony/console.git",
                 "reference": "e44154bfe3e41e8267d7a3794cd9da9a51cfac34"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Console/zipball/e44154bfe3e41e8267d7a3794cd9da9a51cfac34",
+                "url": "https://api.github.com/repos/symfony/console/zipball/e44154bfe3e41e8267d7a3794cd9da9a51cfac34",
                 "reference": "e44154bfe3e41e8267d7a3794cd9da9a51cfac34",
                 "shasum": ""
             },
@@ -1180,12 +1182,12 @@
             "target-dir": "Symfony/Component/EventDispatcher",
             "source": {
                 "type": "git",
-                "url": "https://github.com/symfony/EventDispatcher.git",
+                "url": "https://github.com/symfony/event-dispatcher.git",
                 "reference": "f75989f3ab2743a82fe0b03ded2598a2b1546813"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/EventDispatcher/zipball/f75989f3ab2743a82fe0b03ded2598a2b1546813",
+                "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/f75989f3ab2743a82fe0b03ded2598a2b1546813",
                 "reference": "f75989f3ab2743a82fe0b03ded2598a2b1546813",
                 "shasum": ""
             },
@@ -1238,12 +1240,12 @@
             "target-dir": "Symfony/Component/Filesystem",
             "source": {
                 "type": "git",
-                "url": "https://github.com/symfony/Filesystem.git",
+                "url": "https://github.com/symfony/filesystem.git",
                 "reference": "a1f566d1f92e142fa1593f4555d6d89e3044a9b7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Filesystem/zipball/a1f566d1f92e142fa1593f4555d6d89e3044a9b7",
+                "url": "https://api.github.com/repos/symfony/filesystem/zipball/a1f566d1f92e142fa1593f4555d6d89e3044a9b7",
                 "reference": "a1f566d1f92e142fa1593f4555d6d89e3044a9b7",
                 "shasum": ""
             },
@@ -1380,7 +1382,7 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": "~5.4"
+        "php": ">=5.4"
     },
     "platform-dev": []
 }
