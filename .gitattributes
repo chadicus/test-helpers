@@ -4,6 +4,7 @@
 # Exclude unused files
 # see: https://redd.it/2jzp6k
 /tests         export-ignore
+/docs          export-ignore
 /.github       export-ignore
 .*.yml         export-ignore
 .gitattributes export-ignore
