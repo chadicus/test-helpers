@@ -93,4 +93,18 @@ trait ArrayAssertsTrait
      * @return void
      */
     abstract public function assertInternalType($expected, $actual, $message = '');
+
+    /**
+     * Asserts that two variables have the same type and value. Used on objects, it asserts that two variables reference
+     * the same object.
+     *
+     * Ensures this method must be provided by classes using this trait.
+     *
+     * @param string $expected The expected value.
+     * @param mixed  $actual   The actual value.
+     * @param string $message  Optional error message to give upon failure.
+     *
+     * @return void
+     */
+    abstract public function assertSame($expected, $actual, $message = '');
 }
