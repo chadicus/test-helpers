@@ -1,10 +1,16 @@
 # Chadicus Test Helpers
-[![Build Status](http://img.shields.io/travis/chadicus/test-helpers.svg?style=flat)](https://travis-ci.org/chadicus/test-helpers)
-[![Scrutinizer Code Quality](http://img.shields.io/scrutinizer/g/chadicus/test-helpers.svg?style=flat)](https://scrutinizer-ci.com/g/chadicus/test-helpers/)
-[![Coverage Status](https://coveralls.io/repos/github/chadicus/test-helpers/badge.svg?branch=master)](https://coveralls.io/github/chadicus/test-helpers?branch=master)
-[![Latest Stable Version](http://img.shields.io/packagist/v/chadicus/test-helpers.svg?style=flat)](https://packagist.org/packages/chadicus/test-helpers)
-[![Total Downloads](http://img.shields.io/packagist/dt/chadicus/test-helpers.svg?style=flat)](https://packagist.org/packages/chadicus/test-helpers)
-[![License](http://img.shields.io/packagist/l/chadicus/test-helpers.svg?style=flat)](https://packagist.org/packages/chadicus/test-helpers)
+
+[![Build Status](https://travis-ci.org/chadicus/test-helpers.svg?branch=master)](https://travis-ci.org/chadicus/test-helpers)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/chadicus/test-helpers/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/chadicus/test-helpers/?branch=master)
+[![Code Coverage](https://coveralls.io/repos/github/chadicus/test-helpers/badge.svg?branch=master)](https://coveralls.io/github/chadicus/test-helpers?branch=master)
+
+[![Latest Stable Version](https://poser.pugx.org/chadicus/test-helpers/v/stable)](https://packagist.org/packages/chadicus/test-helpers)
+[![Latest Unstable Version](https://poser.pugx.org/chadicus/test-helpers/v/unstable)](https://packagist.org/packages/chadicus/test-helpers)
+[![License](https://poser.pugx.org/chadicus/test-helpers/license)](https://packagist.org/packages/chadicus/test-helpers)
+
+[![Total Downloads](https://poser.pugx.org/chadicus/test-helpers/downloads)](https://packagist.org/packages/chadicus/test-helpers)
+[![Daily Downloads](https://poser.pugx.org/chadicus/test-helpers/d/daily)](https://packagist.org/packages/chadicus/test-helpers)
+[![Monthly Downloads](https://poser.pugx.org/chadicus/test-helpers/d/monthly)](https://packagist.org/packages/chadicus/test-helpers)
 
 ## Requirements
 
