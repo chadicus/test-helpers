@@ -67,4 +67,17 @@ trait ArrayAssertsTrait
             );
         }
     }
+
+    /**
+     * Asserts the number of elements of an array, Countable or Traversable.
+     *
+     * Ensures this method must be provided by classes using this trait.
+     *
+     * @param integer $expectedCount The expected number of items in $haystack.
+     * @param mixed   $haystack      The array, countable or traversable object containing items.
+     * @param string  $message       Optional error message to give upon failure.
+     *
+     * @return void
+     */
+    abstract public function assertCount($expectedCount, $haystack, $message = '');
 }
