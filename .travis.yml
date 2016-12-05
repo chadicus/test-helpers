@@ -1,14 +1,14 @@
 language: php
 
 php:
-  - 5.4
-  - 5.5
   - 5.6
   - 7.0
+  - 7.1
 
 before_script:
     - composer self-update || true
+    - composer install
 
-script: ./build.php
+script: ./vendor/bin/phpunit --coverage-clover clover.xml
 
 after_script: ./vendor/bin/coveralls -v
