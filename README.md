@@ -1,7 +1,7 @@
 # Chadicus Test Helpers
 [![Build Status](http://img.shields.io/travis/chadicus/test-helpers.svg?style=flat)](https://travis-ci.org/chadicus/test-helpers)
 [![Scrutinizer Code Quality](http://img.shields.io/scrutinizer/g/chadicus/test-helpers.svg?style=flat)](https://scrutinizer-ci.com/g/chadicus/test-helpers/)
-[![Code Coverage](http://img.shields.io/coveralls/chadicus/test-helpers.svg?style=flat)](https://coveralls.io/r/chadicus/test-helpers)
+[![Coverage Status](https://coveralls.io/repos/github/chadicus/test-helpers/badge.svg?branch=master)](https://coveralls.io/github/chadicus/test-helpers?branch=master)
 [![Latest Stable Version](http://img.shields.io/packagist/v/chadicus/test-helpers.svg?style=flat)](https://packagist.org/packages/chadicus/test-helpers)
 [![Total Downloads](http://img.shields.io/packagist/dt/chadicus/test-helpers.svg?style=flat)](https://packagist.org/packages/chadicus/test-helpers)
 [![License](http://img.shields.io/packagist/l/chadicus/test-helpers.svg?style=flat)](https://packagist.org/packages/chadicus/test-helpers)
