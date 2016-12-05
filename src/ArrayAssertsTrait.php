@@ -42,7 +42,7 @@ trait ArrayAssertsTrait
             0,
             $unexpectedKeys,
             sprintf(
-                '$actual contains %d unexpected keys: %s',
+                '$actual array contains %d unexpected keys: %s',
                 count($unexpectedKeys),
                 implode(', ', $unexpectedKeys)
             )
@@ -50,9 +50,10 @@ trait ArrayAssertsTrait
 
         //Assert all values are the same value and type.
         //Recursively call assertSameArray on array values
-        foreach ($expectedArray as $key => $value) {
-            if (!is_array($value)) {
+        foreach ($expected as $key => $value) {
+            if (is_array($value)) {
                 $this->assertSameArray($value, $actual[$key], "{$prefix}{$key}.");
+                continue;
             }
 
             $this->assertSame(
