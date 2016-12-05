@@ -80,4 +80,17 @@ trait ArrayAssertsTrait
      * @return void
      */
     abstract public function assertCount($expectedCount, $haystack, $message = '');
+
+    /**
+     * Asserts that a variable is of a given type.
+     *
+     * Ensures this method must be provided by classes using this trait.
+     *
+     * @param string $expected The expected internal type.
+     * @param mixed  $actual   The variable to verify.
+     * @param string $message  Optional error message to give upon failure.
+     *
+     * @return void
+     */
+    abstract public function assertInternalType($expected, $actual, $message = '');
 }
