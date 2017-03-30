@@ -110,7 +110,7 @@ final class ArrayAssertsTraitTest extends \PHPUnit_Framework_TestCase
         $expected = [
             'foo' => 1,
             'bar' => 2,
-			'sub' => [
+            'sub' => [
                'sub1' => 'foo',
                'sub2' => 'bar',
             ],
@@ -118,7 +118,7 @@ final class ArrayAssertsTraitTest extends \PHPUnit_Framework_TestCase
 
         $actual = [
             'bar' => 2,
-			'sub' => [
+            'sub' => [
                'sub2' => 'bar',
                'sub1' => 'foo',
             ],
@@ -141,7 +141,7 @@ final class ArrayAssertsTraitTest extends \PHPUnit_Framework_TestCase
         $expected = [
             'foo' => 1,
             'bar' => 2,
-			'sub' => [
+            'sub' => [
                'sub1' => 'bar',
                'sub2' => 'foo',
             ],
@@ -149,7 +149,7 @@ final class ArrayAssertsTraitTest extends \PHPUnit_Framework_TestCase
 
         $actual = [
             'bar' => 2,
-			'sub' => [
+            'sub' => [
                'sub2' => 'bar',
                'sub1' => 'foo',
             ],
@@ -159,10 +159,41 @@ final class ArrayAssertsTraitTest extends \PHPUnit_Framework_TestCase
 		try {
         	$this->assertSameArray($expected, $actual);
         } catch (\PHPUnit_Framework_AssertionFailedError $e) {
-			$this->assertContains("sub.sub1 value is not correct expected 'bar'\nfound 'foo'", $e->getMessage());
+            $this->assertContains("sub.sub1 value is not correct expected 'bar'\nfound 'foo'", $e->getMessage());
             return;
         }
 
 		$this->fail();
+    }
+
+    /**
+     * Verify behaviour of assertSameArray() with a numerically indexed sub array.
+     *
+     * @test
+     * @covers ::assertSameArray
+     *
+     * @return void
+     */
+    public function sameArrayWithNumericIndexedSubArray()
+    {
+        $expected = [
+            'key1' => 'value1',
+            'sub' => [
+                'subValue1',
+                'subValue2',
+            ],
+            'key2' => 'value2',
+        ];
+
+        $actual = [
+            'key1' => 'value1',
+            'sub' => [
+                'subValue2',
+                'subValue1',
+            ],
+            'key2' => 'value2',
+        ];
+
+        $this->assertSameArray($expected, $actual);
     }
 }
