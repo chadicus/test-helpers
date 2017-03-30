@@ -51,6 +51,13 @@ trait ArrayAssertsTrait
         //Assert all values are the same value and type.
         //Recursively call assertSameArray on array values
         foreach ($expected as $key => $value) {
+            //If a sub array is indexed numerically we just want to ensure all the values are present and not their keys.
+            if (is_array($value) && self::isNumeric($value)) {
+                $difference = array_diff($value, $actual[$key]);
+                $this->assertSame(count($difference), 0);
+                continue;
+            }
+
             if (is_array($value)) {
                 $this->assertSameArray($value, $actual[$key], "{$prefix}{$key}.");
                 continue;
@@ -66,6 +73,24 @@ trait ArrayAssertsTrait
                 )
             );
         }
+    }
+
+    /**
+     * Determines if an array is a numerically indexed array i.e. an array with numeric and sequential keys.
+     *
+     * @param array $subject The array to check if indexed.
+     *
+     * @return boolean
+     */
+    private function isNumeric(array $subject)
+    {
+        $nonNumericKeyCount = count(array_filter(array_keys($subject), 'is_string'));
+        if ($nonNumericKeyCount > 0) {
+            return false;
+        }
+
+        //If the array keys are from 0 to N they are sequential and therefore numerically indexed.
+        return array_keys($subject) === range(0, count($subject) -1);
     }
 
     /**
