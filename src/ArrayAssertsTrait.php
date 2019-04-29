@@ -100,9 +100,9 @@ trait ArrayAssertsTrait
      *
      * Ensures this method must be provided by classes using this trait.
      *
-     * @param string $expected The expected value.
-     * @param mixed  $actual   The actual value.
-     * @param string $message  Optional error message to give upon failure.
+     * @param string|array|object $expected The expected value.
+     * @param mixed               $actual   The actual value.
+     * @param string              $message  Optional error message to give upon failure.
      *
      * @return void
      */
