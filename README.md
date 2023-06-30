@@ -1,9 +1,5 @@
 # Chadicus Test Helpers
 
-[![Build Status](https://travis-ci.org/chadicus/test-helpers.svg?branch=master)](https://travis-ci.org/chadicus/test-helpers)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/chadicus/test-helpers/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/chadicus/test-helpers/?branch=master)
-[![Code Coverage](https://coveralls.io/repos/github/chadicus/test-helpers/badge.svg?branch=master)](https://coveralls.io/github/chadicus/test-helpers?branch=master)
-
 [![Latest Stable Version](https://poser.pugx.org/chadicus/test-helpers/v/stable)](https://packagist.org/packages/chadicus/test-helpers)
 [![Latest Unstable Version](https://poser.pugx.org/chadicus/test-helpers/v/unstable)](https://packagist.org/packages/chadicus/test-helpers)
 [![License](https://poser.pugx.org/chadicus/test-helpers/license)](https://packagist.org/packages/chadicus/test-helpers)
@@ -14,7 +10,7 @@
 
 ## Requirements
 
-Test Helpers requires PHP 5.6 (or later).
+Test Helpers requires PHP 7.3 (or later).
 
 ## Composer
 To add the library as a local, per-project dependency use [Composer](http://getcomposer.org)! Simply add a dependency on
@@ -40,8 +36,8 @@ With a checkout of the code get [Composer](http://getcomposer.org) in your PATH 
 
 ```sh
 composer install
-./vendor/bin/phpunit
-./vendor/bin/phpcs --standard=./vendor/chadicus/coding-standard/Chadicus -n src
+composer run test
+composer run lint
 ```
 # \Chadicus\FunctionRegistry
 
