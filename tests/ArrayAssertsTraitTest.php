@@ -8,7 +8,7 @@ use Chadicus\ArrayAssertsTrait;
  * @coversDefaultClass \Chadicus\ArrayAssertsTrait
  * @covers ::<private>
  */
-final class ArrayAssertsTraitTest extends \PHPUnit_Framework_TestCase
+final class ArrayAssertsTraitTest extends \PHPUnit\Framework\TestCase
 {
     use ArrayAssertsTrait;
 
@@ -56,14 +56,14 @@ final class ArrayAssertsTraitTest extends \PHPUnit_Framework_TestCase
             'foo' => 1,
         ];
 
-		try {
-        	$this->assertSameArray($expected, $actual);
-        } catch (\PHPUnit_Framework_AssertionFailedError $e) {
-			$this->assertContains('$actual array is missing 1 keys: baz', $e->getMessage());
+        try {
+            $this->assertSameArray($expected, $actual);
+        } catch (\PHPUnit\Framework\AssertionFailedError $e) {
+            $this->assertStringContainsString('$actual array is missing 1 keys: baz', $e->getMessage());
             return;
         }
 
-		$this->fail();
+        $this->fail();
     }
 
     /**
@@ -87,14 +87,14 @@ final class ArrayAssertsTraitTest extends \PHPUnit_Framework_TestCase
             'baz' => 3,
         ];
 
-		try {
-        	$this->assertSameArray($expected, $actual);
-        } catch (\PHPUnit_Framework_AssertionFailedError $e) {
-			$this->assertContains('$actual array contains 1 unexpected keys: baz', $e->getMessage());
+        try {
+            $this->assertSameArray($expected, $actual);
+        } catch (\PHPUnit\Framework\AssertionFailedError $e) {
+            $this->assertStringContainsString('$actual array contains 1 unexpected keys: baz', $e->getMessage());
             return;
         }
 
-		$this->fail();
+        $this->fail();
     }
 
     /**
@@ -110,7 +110,7 @@ final class ArrayAssertsTraitTest extends \PHPUnit_Framework_TestCase
         $expected = [
             'foo' => 1,
             'bar' => 2,
-			'sub' => [
+            'sub' => [
                'sub1' => 'foo',
                'sub2' => 'bar',
             ],
@@ -118,14 +118,14 @@ final class ArrayAssertsTraitTest extends \PHPUnit_Framework_TestCase
 
         $actual = [
             'bar' => 2,
-			'sub' => [
+            'sub' => [
                'sub2' => 'bar',
                'sub1' => 'foo',
             ],
             'foo' => 1,
         ];
 
-    	$this->assertSameArray($expected, $actual);
+        $this->assertSameArray($expected, $actual);
     }
 
     /**
@@ -141,7 +141,7 @@ final class ArrayAssertsTraitTest extends \PHPUnit_Framework_TestCase
         $expected = [
             'foo' => 1,
             'bar' => 2,
-			'sub' => [
+            'sub' => [
                'sub1' => 'bar',
                'sub2' => 'foo',
             ],
@@ -149,20 +149,23 @@ final class ArrayAssertsTraitTest extends \PHPUnit_Framework_TestCase
 
         $actual = [
             'bar' => 2,
-			'sub' => [
+            'sub' => [
                'sub2' => 'bar',
                'sub1' => 'foo',
             ],
             'foo' => 1,
         ];
 
-		try {
-        	$this->assertSameArray($expected, $actual);
-        } catch (\PHPUnit_Framework_AssertionFailedError $e) {
-			$this->assertContains("sub.sub1 value is not correct expected 'bar'\nfound 'foo'", $e->getMessage());
+        try {
+            $this->assertSameArray($expected, $actual);
+        } catch (\PHPUnit\Framework\AssertionFailedError $e) {
+            $this->assertStringContainsString(
+                "sub.sub1 value is not correct expected 'bar'\nfound 'foo'",
+                $e->getMessage()
+            );
             return;
         }
 
-		$this->fail();
+        $this->fail();
     }
 }

@@ -9,9 +9,8 @@ use \Chadicus\FunctionRegistry;
  * @coversDefaultClass \Chadicus\FunctionRegistry
  * @covers ::<private>
  */
-final class FunctionRegistryTest extends \PHPUnit_Framework_TestCase
+final class FunctionRegistryTest extends \PHPUnit\Framework\TestCase
 {
-
     /**
      * Verify basic behavior of FunctionRegistry.
      *
@@ -50,7 +49,6 @@ final class FunctionRegistryTest extends \PHPUnit_Framework_TestCase
     {
         FunctionRegistry::set(__NAMESPACE__, 'strtolower', '\Chadicus\Tests\FunctionRegistryTest::staticCallable');
         $this->assertSame('\Chadicus\Tests\FunctionRegistryTest::staticCallable', FunctionRegistry::get('strtolower'));
-
     }
 
     /**

@@ -22,7 +22,7 @@ final class FunctionRegistry
      *
      * @return void
      */
-    public static function set($namespace, $name, callable $function)
+    public static function set(string $namespace, string $name, callable $function)
     {
         self::evaluate($namespace, $name);
         self::$functions[$name] = $function;
@@ -35,7 +35,7 @@ final class FunctionRegistry
      *
      * @return callable
      */
-    public static function get($name)
+    public static function get(string $name)
     {
         if (\array_key_exists($name, self::$functions)) {
             return self::$functions[$name];
@@ -48,12 +48,12 @@ final class FunctionRegistry
     /**
      * Sets all custom function properties to null.
      *
-     * @param string $namespace  The namespace from which the global function will be called.
-     * @param array  $extensions Array of PHP extensions whose functions will be mocked.
+     * @param string|null $namespace  The namespace from which the global function will be called.
+     * @param array       $extensions Array of PHP extensions whose functions will be mocked.
      *
      * @return void
      */
-    public static function reset($namespace = null, array $extensions = array())
+    public static function reset(?string $namespace = null, array $extensions = array())
     {
         self::$functions = array();
         foreach ($extensions as $extension) {

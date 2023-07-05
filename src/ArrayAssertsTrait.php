@@ -19,7 +19,7 @@ trait ArrayAssertsTrait
     public function assertSameArray(array $expected, $actual, $prefix = null)
     {
         //assert that the actual value is an array
-        $this->assertInternalType('array', $actual, '$actual was not an array');
+        $this->assertIsArray($actual, '$actual was not an array');
 
         $expectedKeys = array_keys($expected);
         $actualKeys = array_keys($actual);
@@ -79,20 +79,19 @@ trait ArrayAssertsTrait
      *
      * @return void
      */
-    abstract public function assertCount($expectedCount, $haystack, $message = '');
+    abstract public static function assertCount(int $expectedCount, $haystack, string $message = '');
 
     /**
-     * Asserts that a variable is of a given type.
+     * Asserts that a variable is an Array.
      *
      * Ensures this method must be provided by classes using this trait.
      *
-     * @param string $expected The expected internal type.
-     * @param mixed  $actual   The variable to verify.
-     * @param string $message  Optional error message to give upon failure.
+     * @param mixed  $actual  The variable to verify.
+     * @param string $message Optional error message to give upon failure.
      *
      * @return void
      */
-    abstract public function assertInternalType($expected, $actual, $message = '');
+    abstract public static function assertIsArray($actual, string $message = '');
 
     /**
      * Asserts that two variables have the same type and value. Used on objects, it asserts that two variables reference
@@ -106,5 +105,5 @@ trait ArrayAssertsTrait
      *
      * @return void
      */
-    abstract public function assertSame($expected, $actual, $message = '');
+    abstract public static function assertSame($expected, $actual, string $message = '');
 }
